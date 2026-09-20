@@ -650,13 +650,16 @@
         <div class="timeline-item reveal">
           <div class="timeline-meta">
             <span class="timeline-period">Dec 2025 – Present</span>
-            <span class="timeline-company">Coding Mountain</span>
+            <span class="timeline-company"><a href="https://codingmountain.com/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--text-faint);transition:border-color var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--text-faint)'">Coding Mountain</a></span>
           </div>
           <div class="timeline-role">Software Engineer I — AI Developer</div>
           <ul class="timeline-bullets">
             <li>Designing and implementing end-to-end AI systems using Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) architectures for production-grade applications.</li>
             <li>Developing scalable RAG pipelines leveraging vector databases such as ChromaDB and Pinecone, integrated with relational backends including PostgreSQL.</li>
             <li>Building AI agents and workflow orchestration pipelines using the Gemini 2.5 Flash API to support enterprise use cases.</li>
+            <li>Architected and built <strong>voyanti-risk-engine</strong>, a FastAPI-based geospatial risk intelligence microservice for the voyanti.ai platform, aggregating real-time threat data from USGS, GDACS, OpenWeather, and an internal TravelRiskModule.</li>
+            <li>Designed a PostgreSQL + PostGIS database layer with 17 Alembic migration revisions and async SQLAlchemy (asyncpg) for high-throughput geospatial queries; integrated AWS SQS, SNS, and Kinesis Firehose for event-driven risk data processing and log analytics.</li>
+            <li>Embedded Anthropic Claude (claude-haiku) as an LLM engine for auto-generating natural-language risk summaries; exposed 20+ REST endpoints with CI/CD across dev, UAT, and prod via GitHub Actions and SonarQube.</li>
             <li>Implementing high-performance Python microservices for model inference, embedding generation, and data processing.</li>
             <li>Managing version control, CI/CD pipelines, and testing workflows using Git to ensure reliable and maintainable deployments.</li>
           </ul>
@@ -666,7 +669,7 @@
         <div class="timeline-item reveal">
           <div class="timeline-meta">
             <span class="timeline-period">Sep 2025 – Nov 2025</span>
-            <span class="timeline-company">Coding Mountain</span>
+            <span class="timeline-company"><a href="https://codingmountain.com/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--text-faint);transition:border-color var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--text-faint)'">Coding Mountain</a></span>
           </div>
           <div class="timeline-role">AI Trainee</div>
           <ul class="timeline-bullets">
@@ -680,7 +683,7 @@
         <div class="timeline-item reveal">
           <div class="timeline-meta">
             <span class="timeline-period">Jul 2025 – Aug 2025</span>
-            <span class="timeline-company">Coding Mountain</span>
+            <span class="timeline-company"><a href="https://codingmountain.com/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--text-faint);transition:border-color var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--text-faint)'">Coding Mountain</a></span>
           </div>
           <div class="timeline-role">AI Intern</div>
           <ul class="timeline-bullets">
@@ -695,7 +698,7 @@
         <div class="timeline-item reveal">
           <div class="timeline-meta">
             <span class="timeline-period">Jun 2023 – Aug 2023</span>
-            <span class="timeline-company">SRM University-AP</span>
+            <span class="timeline-company"><a href="https://www.srmap.edu.in/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--text-faint);transition:border-color var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--text-faint)'">SRM University-AP</a></span>
           </div>
           <div class="timeline-role">Research Intern</div>
           <ul class="timeline-bullets">
@@ -778,10 +781,27 @@
           <div class="skill-card-title">Databases &amp; Backend</div>
           <div class="skill-tags">
             <span class="tag">PostgreSQL</span>
+            <span class="tag">PostGIS</span>
             <span class="tag">MySQL</span>
             <span class="tag">SQLite</span>
+            <span class="tag">SQLAlchemy (async)</span>
+            <span class="tag">Alembic</span>
             <span class="tag">FastAPI</span>
             <span class="tag">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">☁️</div>
+          <div class="skill-card-title">Cloud &amp; Event Infrastructure</div>
+          <div class="skill-tags">
+            <span class="tag">AWS SQS</span>
+            <span class="tag">AWS SNS</span>
+            <span class="tag">Kinesis Firehose</span>
+            <span class="tag">Boto3 / aioboto3</span>
+            <span class="tag">Docker</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">SonarQube</span>
           </div>
         </div>
 
@@ -816,7 +836,26 @@
 
         <!-- Project 1 -->
         <div class="project-card reveal">
-          <div class="project-num">01 / AI &amp; Legal Tech</div>
+          <div class="project-num">01 / Microservices &amp; Cloud</div>
+          <div class="project-title">voyanti-risk-engine</div>
+          <div class="project-desc">
+            Production microservice for the voyanti.ai platform — aggregates geospatial risk intelligence from USGS, GDACS, OpenWeather, and an internal travel-risk module. Features async PostgreSQL + PostGIS, AWS SQS/SNS/Kinesis Firehose event infrastructure, and LLM-powered (Anthropic Claude) natural-language risk summaries exposed via 20+ REST endpoints.
+          </div>
+          <div class="project-tech">
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL + PostGIS</span>
+            <span class="tag">AWS SQS / SNS</span>
+            <span class="tag">Kinesis Firehose</span>
+            <span class="tag">Anthropic Claude</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Alembic</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal">
+          <div class="project-num">02 / AI &amp; Legal Tech</div>
           <div class="project-title">RAG System for Nepali Law</div>
           <div class="project-desc">
             Semantic legal document search and context-aware Q&A system built by scraping, parsing, and structuring Nepal Kanun Patrika documents into a vector database. Deployed as a live demo on Hugging Face Spaces.
@@ -830,9 +869,9 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 3 -->
         <div class="project-card reveal">
-          <div class="project-num">02 / AI Tooling</div>
+          <div class="project-num">03 / AI Tooling</div>
           <div class="project-title">CV Screening Tool</div>
           <div class="project-desc">
             AI-powered resume screening web tool that uses LLMs and RAG to intelligently analyze and rank candidate resumes against job descriptions — automating a time-intensive HR workflow.
@@ -846,9 +885,9 @@
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Project 4 -->
         <div class="project-card reveal">
-          <div class="project-num">03 / AI Agents</div>
+          <div class="project-num">04 / AI Agents</div>
           <div class="project-title">Daily GitHub &amp; Jira Digest Agent</div>
           <div class="project-desc">
             Automated agent that summarizes daily engineering activity from GitHub and Jira into concise, insightful reports — improving team visibility and async communication.
@@ -861,9 +900,9 @@
           </div>
         </div>
 
-        <!-- Project 4 -->
+        <!-- Project 5 -->
         <div class="project-card reveal">
-          <div class="project-num">04 / Computer Vision</div>
+          <div class="project-num">05 / Computer Vision</div>
           <div class="project-title">Fruits &amp; Vegetables Weight Estimator</div>
           <div class="project-desc">
             System to estimate volume and weight of fruits and vegetables from images using depth estimation, object segmentation, and classification. Volume-density mapping produces final weight output.
@@ -876,9 +915,9 @@
           </div>
         </div>
 
-        <!-- Project 5 -->
+        <!-- Project 6 -->
         <div class="project-card reveal">
-          <div class="project-num">05 / Cybersecurity &amp; DL</div>
+          <div class="project-num">06 / Cybersecurity &amp; DL</div>
           <div class="project-title">IoT Network Intrusion Detection</div>
           <div class="project-desc">
             Deep learning-based intrusion detection system for IoT networks. Applied SMOTE for class balancing, mRMR for feature selection, and a hybrid architecture using convolutional, recurrent, and attention layers.
@@ -892,9 +931,9 @@
           </div>
         </div>
 
-        <!-- Project 6 -->
+        <!-- Project 7 -->
         <div class="project-card reveal">
-          <div class="project-num">06 / Research &amp; ML</div>
+          <div class="project-num">07 / Research &amp; ML</div>
           <div class="project-title">Disaster Tweet Classification</div>
           <div class="project-desc">
             NLP classification system to detect disaster-related tweets using BERT (TensorFlow + Hugging Face). Research published in a peer-reviewed IEEE conference paper.
@@ -930,21 +969,21 @@
           <div class="edu-item">
             <div class="edu-year">2021 – 2025</div>
             <div class="edu-degree">B.Tech in Computer Science Engineering</div>
-            <div class="edu-school">SRM University-AP, Andhra Pradesh</div>
+            <div class="edu-school"><a href="https://www.srmap.edu.in/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--text-faint);transition:border-color var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--text-faint)'">SRM University-AP, Andhra Pradesh</a></div>
             <span class="edu-score">CGPA: 8.14 / 10</span>
           </div>
 
           <div class="edu-item">
             <div class="edu-year">2021</div>
             <div class="edu-degree">Senior Secondary (GCE A Level)</div>
-            <div class="edu-school">Little Angels' GCE A Level College</div>
+            <div class="edu-school"><a href="https://www.lac.edu.np/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--text-faint);transition:border-color var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--text-faint)'">Little Angels' GCE A Level College</a></div>
             <span class="edu-score">80%</span>
           </div>
 
           <div class="edu-item">
             <div class="edu-year">2018</div>
             <div class="edu-degree">Secondary (SEE)</div>
-            <div class="edu-school">Little Angels' School</div>
+            <div class="edu-school"><a href="https://www.las.edu.np/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--text-faint);transition:border-color var(--transition);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--text-faint)'">Little Angels' School</a></div>
             <span class="edu-score">88%</span>
           </div>
         </div>
