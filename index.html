@@ -626,8 +626,8 @@
           <div class="stat-label">IEEE paper published</div>
         </div>
         <div>
-          <div class="stat-num">3+</div>
-          <div class="stat-label">Production AI systems</div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">Production AI systems shipped</div>
         </div>
       </div>
 
@@ -654,12 +654,19 @@
           </div>
           <div class="timeline-role">Software Engineer I — AI Developer</div>
           <ul class="timeline-bullets">
-            <li>Designing and implementing end-to-end AI systems using Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) architectures for production-grade applications.</li>
-            <li>Developing scalable RAG pipelines leveraging vector databases such as ChromaDB and Pinecone, integrated with relational backends including PostgreSQL.</li>
-            <li>Building AI agents and workflow orchestration pipelines using the Gemini 2.5 Flash API to support enterprise use cases.</li>
-            <li>Architected and built <strong>voyanti-risk-engine</strong>, a FastAPI-based geospatial risk intelligence microservice for the voyanti.ai platform, aggregating real-time threat data from USGS, GDACS, OpenWeather, and an internal TravelRiskModule.</li>
+            <li>Designed and shipped two FastAPI-based AI/backend systems to production — <strong>voyanti-risk-engine</strong> and <strong>basecamp-chatbot</strong> — covering geospatial risk intelligence and a hybrid-retrieval RAG chatbot.</li>
+            <li>Building AI agents and workflow orchestration pipelines using the LLMs to support enterprise use cases.</li>
+
+            <li><strong>voyanti-risk-engine:</strong> architected a geospatial risk intelligence microservice for the voyanti.ai platform, aggregating real-time threat data from USGS, GDACS, OpenWeather, and an internal TravelRiskModule.</li>
             <li>Designed a PostgreSQL + PostGIS database layer with 17 Alembic migration revisions and async SQLAlchemy (asyncpg) for high-throughput geospatial queries; integrated AWS SQS, SNS, and Kinesis Firehose for event-driven risk data processing and log analytics.</li>
             <li>Embedded Anthropic Claude (claude-haiku) as an LLM engine for auto-generating natural-language risk summaries; exposed 20+ REST endpoints with CI/CD across dev, UAT, and prod via GitHub Actions and SonarQube.</li>
+
+            <li><strong>basecamp-chatbot:</strong> built a production RAG chatbot that answers questions from documents in a Google Drive folder, served via FastAPI with a Groq-hosted LLM, LLM-based greeting/query intent classification, and per-user conversation history.</li>
+            <li>Switched ingestion from PDFs to <strong>DOCX</strong> so documents keep their section and subsection structure, giving cleaner, better-grounded chunks in ChromaDB.</li>
+            <li>Implemented <strong>hybrid retrieval</strong> — sparse (keyword) plus dense (embedding) search — with <strong>Reciprocal Rank Fusion (RRF)</strong> to produce the final ranking; kept the stack lightweight by replacing LangChain with <strong>FastEmbed</strong> for embeddings and managing the project with <strong>uv</strong>.</li>
+            <li>Replaced Langfuse with a custom logging schema covering application logs and LLM logs, plus a <strong>Jinja2</strong>-rendered, filterable log viewer served from an API endpoint as a lightweight web page.</li>
+            <li>Built a retrieval-testing suite and an end-to-end RAG test harness (ingestion → indexing → retrieval → generation) evaluated against a golden dataset.</li>
+
             <li>Implementing high-performance Python microservices for model inference, embedding generation, and data processing.</li>
             <li>Managing version control, CI/CD pipelines, and testing workflows using Git to ensure reliable and maintainable deployments.</li>
           </ul>
@@ -674,8 +681,7 @@
           <div class="timeline-role">AI Trainee</div>
           <ul class="timeline-bullets">
             <li>Developed an AI-powered CV screening web tool leveraging LLMs and RAG to intelligently analyze and rank candidate resumes against job descriptions.</li>
-            <li>Built an automated Daily GitHub &amp; Jira Digest Agent that summarizes engineering activity into concise, insightful reports for enhanced team visibility.</li>
-            <li>Utilized Python, Docker, Pinecone, and ChromaDB for scalable deployment and efficient vector-based retrieval.</li>
+            <li>Utilized Python, Docker, and ChromaDB for scalable deployment and efficient vector-based retrieval (prototyped on Pinecone before standardising on ChromaDB).</li>
           </ul>
         </div>
 
@@ -734,6 +740,7 @@
             <span class="tag">AI Agents</span>
             <span class="tag">Prompt Engineering</span>
             <span class="tag">Model Orchestration</span>
+            <span class="tag">RAG Evaluation (Golden Dataset)</span>
           </div>
         </div>
 
@@ -745,6 +752,9 @@
             <span class="tag">Vector Databases</span>
             <span class="tag">Semantic Search</span>
             <span class="tag">Hybrid Retrieval</span>
+            <span class="tag">Sparse + Dense Search</span>
+            <span class="tag">Reciprocal Rank Fusion</span>
+            <span class="tag">FastEmbed</span>
             <span class="tag">FAISS</span>
             <span class="tag">ChromaDB</span>
             <span class="tag">Pinecone</span>
@@ -788,6 +798,9 @@
             <span class="tag">Alembic</span>
             <span class="tag">FastAPI</span>
             <span class="tag">REST APIs</span>
+            <span class="tag">Jinja2</span>
+            <span class="tag">Structured Logging</span>
+            <span class="tag">Pytest</span>
           </div>
         </div>
 
@@ -813,8 +826,9 @@
             <span class="tag">Java</span>
             <span class="tag">C / C++</span>
             <span class="tag">Docker</span>
+            <span class="tag">uv</span>
             <span class="tag">Git &amp; CI/CD</span>
-            <span class="tag">Gemini API</span>
+            <span class="tag">Groq API</span>
           </div>
         </div>
 
@@ -855,7 +869,26 @@
 
         <!-- Project 2 -->
         <div class="project-card reveal">
-          <div class="project-num">02 / AI &amp; Legal Tech</div>
+          <div class="project-num">02 / Production RAG</div>
+          <div class="project-title">basecamp-chatbot</div>
+          <div class="project-desc">
+            Production RAG chatbot that answers questions from Google Drive documents. Ingests DOCX files to preserve section and subsection structure, retrieves with sparse + dense search fused via Reciprocal Rank Fusion, and generates answers with a Groq-hosted LLM and per-user history. Includes a custom Jinja2 log viewer for application and LLM logs, and retrieval plus end-to-end RAG tests against a golden dataset.
+          </div>
+          <div class="project-tech">
+            <span class="tag">FastAPI</span>
+            <span class="tag">ChromaDB</span>
+            <span class="tag">Hybrid Retrieval (RRF)</span>
+            <span class="tag">FastEmbed</span>
+            <span class="tag">Groq</span>
+            <span class="tag">Jinja2</span>
+            <span class="tag">uv</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal">
+          <div class="project-num">03 / AI &amp; Legal Tech</div>
           <div class="project-title">RAG System for Nepali Law</div>
           <div class="project-desc">
             Semantic legal document search and context-aware Q&A system built by scraping, parsing, and structuring Nepal Kanun Patrika documents into a vector database. Deployed as a live demo on Hugging Face Spaces.
@@ -871,7 +904,7 @@
 
         <!-- Project 3 -->
         <div class="project-card reveal">
-          <div class="project-num">03 / AI Tooling</div>
+          <div class="project-num">04 / AI Tooling</div>
           <div class="project-title">CV Screening Tool</div>
           <div class="project-desc">
             AI-powered resume screening web tool that uses LLMs and RAG to intelligently analyze and rank candidate resumes against job descriptions — automating a time-intensive HR workflow.
@@ -879,24 +912,9 @@
           <div class="project-tech">
             <span class="tag">LLM</span>
             <span class="tag">RAG</span>
-            <span class="tag">Pinecone</span>
+            <span class="tag">ChromaDB</span>
             <span class="tag">Docker</span>
             <span class="tag">Python</span>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card reveal">
-          <div class="project-num">04 / AI Agents</div>
-          <div class="project-title">Daily GitHub &amp; Jira Digest Agent</div>
-          <div class="project-desc">
-            Automated agent that summarizes daily engineering activity from GitHub and Jira into concise, insightful reports — improving team visibility and async communication.
-          </div>
-          <div class="project-tech">
-            <span class="tag">AI Agents</span>
-            <span class="tag">Python</span>
-            <span class="tag">GitHub API</span>
-            <span class="tag">Jira API</span>
           </div>
         </div>
 
