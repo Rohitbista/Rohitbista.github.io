@@ -587,7 +587,7 @@
 
       <div class="hero-badge fade-up">
         <span class="dot"></span>
-        Open to AI / ML Engineering roles
+        Open to AI/ML and Python Backend Engineering roles
       </div>
 
       <h1 class="hero-name fade-up delay-1">
@@ -662,7 +662,7 @@
             <li>Embedded Anthropic Claude (claude-haiku) as an LLM engine for auto-generating natural-language risk summaries; exposed 20+ REST endpoints with CI/CD across dev, UAT, and prod via GitHub Actions and SonarQube.</li>
 
             <li><strong>basecamp-chatbot:</strong> built a production RAG chatbot that answers questions from documents in a Google Drive folder, served via FastAPI with a Groq-hosted LLM, LLM-based greeting/query intent classification, and per-user conversation history.</li>
-            <li>Switched ingestion from PDFs to <strong>DOCX</strong> so documents keep their section and subsection structure, giving cleaner, better-grounded chunks in ChromaDB.</li>
+            <li>Using <strong>DOCX</strong> for ingestion to keep their section and subsection structure, giving cleaner, better-grounded chunks in ChromaDB.</li>
             <li>Implemented <strong>hybrid retrieval</strong> — sparse (keyword) plus dense (embedding) search — with <strong>Reciprocal Rank Fusion (RRF)</strong> to produce the final ranking; kept the stack lightweight by replacing LangChain with <strong>FastEmbed</strong> for embeddings and managing the project with <strong>uv</strong>.</li>
             <li>Replaced Langfuse with a custom logging schema covering application logs and LLM logs, plus a <strong>Jinja2</strong>-rendered, filterable log viewer served from an API endpoint as a lightweight web page.</li>
             <li>Built a retrieval-testing suite and an end-to-end RAG test harness (ingestion → indexing → retrieval → generation) evaluated against a golden dataset.</li>
